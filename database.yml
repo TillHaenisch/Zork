@@ -1,0 +1,94 @@
+rooms:
+  - name: Entrance to the house
+    descr: this is where the game starts. Type help for guidance
+    items:
+      - name: key
+        descr: a large, rusty key ring
+      - name: pocket lamp
+        descr: a big Taschenlampe
+  - name: Hall
+    descr: a large dark room stuffed with oak furniture
+    items:
+      - name: briefcase
+        descr: an empty briefcase
+      - name: pocket knife
+        descr: a swiss army multi function pocket knife including USB stick	
+  - name: Attic
+    descr: The attic. Dusty dusty ...
+    items:
+      - name: rope
+        descr: an old pile of rope
+      - name: sword
+        descr: a long shiny sword
+        
+  - name: Living room
+    descr: the living room of the house. 
+    items:
+      - name: carpet
+        descr: an old oriental carpet lies in the middle of the room.
+        
+  - name: cellar
+    descr: A cold and humid cellar. It's absolutely dark, you can't see anything.
+    enable: on pocket lamp
+
+  - name: cellar2
+    descr: A dark empty room.
+
+  - name: cellar3
+    descr: An empty dark room
+
+  - name: cellar4
+    descr: A large dirty room, full of old furniture. In the corner you can see two yellow glowing eyes.    
+    characters:
+      - name: troll
+        descr: A troll with yellow eyes and a big rusty axe... 
+ways:
+  - from: Entrance to the house
+    to: Hall
+    direction: north
+    name: door
+    description: NIX
+
+  - from: Hall
+    to: Attic
+    direction: up
+    name: stairway
+    description: It looks dusty and unstable. Do you really want to take it ?
+    
+  - from: Hall
+    to: Living room
+    direction: east
+    name: door
+    description: heavy door made from solid oak with nails on the bars
+    
+  - from: Living room
+    to: cellar
+    direction: down
+    enable: has carpet 
+    name: trap door
+    description: cast iron trap door
+    
+  - from: cellar
+    to: cellar2
+    direction: east
+    name: door
+    description: leaning door
+    
+  - from: cellar2
+    to: cellar3
+    direction: south
+    name: door
+    description: leaning door
+    
+  - from: cellar3
+    to: cellar4
+    direction: west
+    name: door
+    description: leaning door
+    
+  - from: cellar4
+    to: cellar
+    direction: north
+    enable: dead troll
+    name: door
+    description: a slippery ramp made from solid wood
